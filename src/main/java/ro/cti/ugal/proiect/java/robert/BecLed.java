@@ -14,9 +14,11 @@ import ro.cti.ugal.proiect.java.SursaIluminat;
 
 
 public class BecLed extends SursaIluminat {
-    public int intensity;
+    
+    public int culoareHex; //culoarea becului led
+    
     public BecLed(){
-        this.intensity = 0;
+        this.culoareHex = 0x000000ff; //culoarea becului led initiata in hexadecimal
     }
     
     
