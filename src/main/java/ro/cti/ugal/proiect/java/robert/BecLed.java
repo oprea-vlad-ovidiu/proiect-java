@@ -10,8 +10,14 @@ import ro.cti.ugal.proiect.java.SursaIluminat;
  *
  * @author Robert
  */
+
+
+
 public class BecLed extends SursaIluminat {
-    
+    public int intensity;
+    public BecLed(){
+        this.intensity = 0;
+    }
     
     
 }
