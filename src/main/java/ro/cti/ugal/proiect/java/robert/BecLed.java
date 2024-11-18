@@ -14,11 +14,17 @@ import ro.cti.ugal.proiect.java.SursaIluminat;
 
 
 public class BecLed extends SursaIluminat {
-    
+    public double energyEfficiency;
+    public int lifeDuration;
+    public int hexColor;
+    public float heatEmitted;
     
     
     public BecLed(){
-        
+        this.energyEfficiency = 0;
+        this.lifeDuration = 0;
+        this.hexColor = 0x000000FF;
+        this.heatEmitted = 0.0f;
     }
     
     
