@@ -36,6 +36,10 @@ public class BecClasic extends SursaIluminat{
         this.diametruFilament = o.diametruFilament;
     }
     
+    public String toString(int tabLevel) {
+        return toString().replace("\n", "\n" + "\t".repeat(tabLevel));
+    }
+    
     @Override
     public String toString() {
         return super.toString() + 

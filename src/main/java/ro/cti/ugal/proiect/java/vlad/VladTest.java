@@ -7,7 +7,7 @@ public class VladTest {
             
             Material tungsten = new Material("Tungsten", 5.6e-8, 0.0045);
             BecClasic bec_clasic = new BecClasic(tungsten, 0.58, 4.6e-5, 2700, 15);
-            System.out.println(bec_clasic);
+            System.out.println(bec_clasic.toString(1));
                
             BecClasic copie_clasic = new BecClasic(bec_clasic);
             System.out.println(copie_clasic);
