@@ -1,8 +1,11 @@
 package ro.cti.ugal.proiect.java;
 
-public class ProiectJava {
+import ro.cti.ugal.proiect.java.robert.RobertTest;
+import ro.cti.ugal.proiect.java.vlad.VladTest;
 
+public class ProiectJava {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        RobertTest.main(args);
+        VladTest.main(args);
     }
 }
