@@ -4,10 +4,20 @@
  */
 package ro.cti.ugal.proiect.java.robert;
 
+import ro.cti.ugal.proiect.java.SursaIluminat;
+
 /**
  *
  * @author Robert
  */
-public class Neon {
+public class Neon extends SursaIluminat{
+    
+    public float gasVoltage;
+    
+    public Neon()
+    {
+        this.gasVoltage = 0.0f;
+    }
+    
     
 }
