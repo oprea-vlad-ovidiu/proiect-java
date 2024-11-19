@@ -20,6 +20,7 @@ public class Neon extends SursaIluminat{
     
     public Neon()
     {
+        super();
         this.gasVoltage = 0.0f;
         this.gasType = "none";
         this.tubeDiameter = 0;
@@ -29,8 +30,11 @@ public class Neon extends SursaIluminat{
         
     }
     
-    public Neon(float gasVoltage, String gasType, int tubeD, int tubeL, String tubeMat, boolean dimmable)
+    public Neon(int luminozitate, int temperaturaCuloare, short consum, 
+            float indiceRedareCuloare, float gasVoltage, String gasType, 
+            int tubeD, int tubeL, String tubeMat, boolean dimmable)
     {
+        super(luminozitate, temperaturaCuloare, consum, indiceRedareCuloare);
         this.gasVoltage = gasVoltage;
         this.gasType = gasType;
         this.tubeDiameter = tubeD;
@@ -40,8 +44,9 @@ public class Neon extends SursaIluminat{
     }
     
     public Neon(Neon other) {
-    this.gasVoltage = other.gasVoltage;
-}
+        super(other);
+        this.gasVoltage = other.gasVoltage;
+    }
     
     public String toString()
     {
