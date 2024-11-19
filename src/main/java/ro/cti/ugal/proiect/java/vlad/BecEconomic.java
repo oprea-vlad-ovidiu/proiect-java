@@ -52,13 +52,13 @@ public class BecEconomic extends SursaIluminat implements InterfataIluminat{
     }
 
     @Override
-    public boolean Porneste() {
+    public boolean porneste() {
         System.out.println("Becul Economic a fost pornit!");
         return true;
     }
 
     @Override
-    public int GetConsum() {
+    public int getConsum() {
         return this.consum;
     }
 }
