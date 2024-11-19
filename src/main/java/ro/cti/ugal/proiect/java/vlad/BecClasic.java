@@ -25,7 +25,7 @@ public class BecClasic extends SursaIluminat{
         
         this.luminozitate = (int)(eficientaLuminoasa * putereConsumata);
         this.temperaturaCuloare = (int)temperaturaOperationala;
-        this.indiceRedareCuloare = 0.9;
+        this.indiceRedareCuloare = 0.9f;
         this.consum = (int)putereConsumata;
     }
     
