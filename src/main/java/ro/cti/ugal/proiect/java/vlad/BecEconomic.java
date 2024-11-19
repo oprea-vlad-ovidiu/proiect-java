@@ -1,8 +1,9 @@
 package ro.cti.ugal.proiect.java.vlad;
 
+import ro.cti.ugal.proiect.java.InterfataIluminat;
 import ro.cti.ugal.proiect.java.SursaIluminat;
 
-public class BecEconomic extends SursaIluminat{
+public class BecEconomic extends SursaIluminat implements InterfataIluminat{
     public double continutMercur;   // Toate becurile CFL contin mercur.
     public double continutArgon;    // Toate becurile CFL contin argon.
     public double durataIncalzire;  // Pasul 1 din pronirea unui bec este incalzirea catodului si anodului.
@@ -48,5 +49,16 @@ public class BecEconomic extends SursaIluminat{
                 "Durata incalzire: " + durataIncalzire + "s\n" +
                 "Tip balast: " + tipBalast + "\n" +
                 "Reglabil: " + (reglabil ? "Da" : "Nu") + "\n";
+    }
+
+    @Override
+    public boolean Porneste() {
+        System.out.println("Becul Economic a fost pornit!");
+        return true;
+    }
+
+    @Override
+    public int GetConsum() {
+        return this.consum;
     }
 }

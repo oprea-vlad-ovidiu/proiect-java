@@ -1,8 +1,9 @@
 package ro.cti.ugal.proiect.java.vlad;
 
+import ro.cti.ugal.proiect.java.InterfataIluminat;
 import ro.cti.ugal.proiect.java.SursaIluminat;
 
-public class BecClasic extends SursaIluminat{
+public class BecClasic extends SursaIluminat implements InterfataIluminat {
     public Material materialFilament;
     public double lungimeFilament;
     public double diametruFilament;
@@ -47,5 +48,16 @@ public class BecClasic extends SursaIluminat{
                 (materialFilament != null ? "\tMaterial: " + this.materialFilament.nume + "\n" : "\tMaterial: n\\a\n") +
                 "\tLungime: " + this.lungimeFilament + "m\n" +
                 "\tDiametru: " + this.diametruFilament + "m\n";
+    }
+
+    @Override
+    public boolean Porneste() {
+        System.out.println("Becul clasic a fost pornit!");
+        return true;
+    }
+
+    @Override
+    public int GetConsum() {
+        return this.consum;
     }
 }
