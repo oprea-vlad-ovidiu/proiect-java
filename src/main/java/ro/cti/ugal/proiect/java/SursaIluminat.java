@@ -1,6 +1,6 @@
 package ro.cti.ugal.proiect.java;
 
-public class SursaIluminat {
+public abstract class SursaIluminat {
     public int luminozitate;            // In lumens
     public int temperaturaCuloare;      // In Kelvin, culoarea luminii emisa de bec.
     public int consum;                  // In watts
