@@ -19,7 +19,7 @@ public class BecEconomic extends SursaIluminat{
     }
     
     public BecEconomic(double continutMercur, double continutArgon, double durataIncalzire, 
-            String tipBalast, boolean reglabil, int luminozitate, int temperaturaCuloare, int consum, 
+            String tipBalast, boolean reglabil, int luminozitate, int temperaturaCuloare, short consum, 
             float indiceRedareCuloare) {
         super(luminozitate, temperaturaCuloare, consum, indiceRedareCuloare);
         

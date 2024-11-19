@@ -3,7 +3,7 @@ package ro.cti.ugal.proiect.java;
 public abstract class SursaIluminat {
     public int luminozitate;            // In lumens
     public int temperaturaCuloare;      // In Kelvin, culoarea luminii emisa de bec.
-    public int consum;                  // In watts
+    public short consum;                  // In watts
     public float indiceRedareCuloare;  // Procent - [0.0, 1.0]
     
     public SursaIluminat() {
@@ -13,7 +13,7 @@ public abstract class SursaIluminat {
         this.indiceRedareCuloare = 0.0f;
     }
     
-    public SursaIluminat(int luminozitate, int temperaturaCuloare, int consum, float indiceRedareCuloare) {
+    public SursaIluminat(int luminozitate, int temperaturaCuloare, short consum, float indiceRedareCuloare) {
         this.luminozitate = luminozitate;
         this.temperaturaCuloare = temperaturaCuloare;
         this.consum = consum;

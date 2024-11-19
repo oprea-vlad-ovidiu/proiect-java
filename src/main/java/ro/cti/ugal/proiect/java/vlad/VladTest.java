@@ -15,7 +15,7 @@ public class VladTest {
             BecEconomic bec_economic_gol = new BecEconomic();
             System.out.println(bec_economic_gol);
             
-            BecEconomic bec_economic = new BecEconomic(4, 1, 2.5, "Electronic", false, 1800, 4000, 26, 0.8f);
+            BecEconomic bec_economic = new BecEconomic(4, 1, 2.5, "Electronic", false, 1800, 4000, (short)26, 0.8f);
             System.out.println(bec_economic);
             
             BecEconomic copie_economic = new BecEconomic(bec_economic);
