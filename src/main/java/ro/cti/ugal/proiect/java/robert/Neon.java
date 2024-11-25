@@ -51,7 +51,7 @@ public class Neon extends SursaIluminat{
     public String toString()
     {
         
-        return "gasVoltage is: "+gasVoltage;
+        return "gasVoltage is: "+gasVoltage+"\ngasType: "+gasType+"\ntubeDiameter: "+tubeDiameter+"\ntubeLEngth: "+tubeLength+"\ntubeMaterial:"+tubeMaterial+"\ndimmable: "+dimmable;
         
     }
     

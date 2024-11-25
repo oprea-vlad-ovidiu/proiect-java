@@ -6,5 +6,9 @@ public class RobertTest {
         System.out.println(b);
         Neon n = new Neon(10, 12, (short)1, 4.5f, 5.5f, "Mercury", 8, 30, "Glass", false);
         System.out.println(n);
+        BecLed[] led = new BecLed[10];
+        Neon[] neon = new Neon[10];
+        
+        
     }
 }

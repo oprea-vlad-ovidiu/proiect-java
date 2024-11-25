@@ -46,7 +46,7 @@ public class BecLed extends SursaIluminat {
     
     public String toString()
     {
-        return "Energy Eficiency: "+energyEfficiency + "Life duration: "+lifeDuration + "Led Color: "+hexColor+"Heat: "+heatEmitted;
+        return "Energy Eficiency: "+energyEfficiency + "\nLife duration: "+lifeDuration + "\nLed Color: "+hexColor+"\nHeat: "+heatEmitted;
     }
     
 }
