@@ -12,11 +12,11 @@ import ro.cti.ugal.proiect.java.SursaIluminat;
  */
 public class Neon extends SursaIluminat{
     
-    public float gasVoltage;
-    public String gasType;
-    public int tubeDiameter, tubeLength;
-    public String tubeMaterial;
-    public boolean dimmable;
+    private float gasVoltage;
+    private String gasType;
+    private int tubeDiameter, tubeLength;
+    private String tubeMaterial;
+    private boolean dimmable;
     
     public Neon()
     {
@@ -47,6 +47,56 @@ public class Neon extends SursaIluminat{
         super(other);
         this.gasVoltage = other.gasVoltage;
     }
+    
+    public float getGasVoltage() {
+        return gasVoltage;
+    }
+
+    public String getGasType() {
+        return gasType;
+    }
+
+    public int getTubeDiameter() {
+        return tubeDiameter;
+    }
+
+    public int getTubeLength() {
+        return tubeLength;
+    }
+
+    public String getTubeMaterial() {
+        return tubeMaterial;
+    }
+
+    public boolean isDimmable() {
+        return dimmable;
+    }
+
+    public void setGasVoltage(float gasVoltage) {
+        this.gasVoltage = gasVoltage;
+    }
+
+    public void setGasType(String gasType) {
+        this.gasType = gasType;
+    }
+
+    public void setTubeDiameter(int tubeDiameter) {
+        this.tubeDiameter = tubeDiameter;
+    }
+
+    public void setTubeLength(int tubeLength) {
+        this.tubeLength = tubeLength;
+    }
+
+    public void setTubeMaterial(String tubeMaterial) {
+        this.tubeMaterial = tubeMaterial;
+    }
+
+    public void setDimmable(boolean dimmable) {
+        this.dimmable = dimmable;
+    }
+    
+    
     
     public String toString()
     {

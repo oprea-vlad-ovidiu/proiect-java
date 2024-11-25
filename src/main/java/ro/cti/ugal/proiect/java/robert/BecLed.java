@@ -43,6 +43,40 @@ public class BecLed extends SursaIluminat {
     this.hexColor = other.hexColor;
     this.heatEmitted = other.heatEmitted;
 }
+
+    public float getEnergyEfficiency() {
+        return energyEfficiency;
+    }
+
+    public int getLifeDuration() {
+        return lifeDuration;
+    }
+
+    public int getHexColor() {
+        return hexColor;
+    }
+
+    public float getHeatEmitted() {
+        return heatEmitted;
+    }
+
+    public void setEnergyEfficiency(float energyEfficiency) {
+        this.energyEfficiency = energyEfficiency;
+    }
+
+    public void setLifeDuration(int lifeDuration) {
+        this.lifeDuration = lifeDuration;
+    }
+
+    public void setHexColor(int hexColor) {
+        this.hexColor = hexColor;
+    }
+
+    public void setHeatEmitted(float heatEmitted) {
+        this.heatEmitted = heatEmitted;
+    }
+    
+    
     
     public String toString()
     {
