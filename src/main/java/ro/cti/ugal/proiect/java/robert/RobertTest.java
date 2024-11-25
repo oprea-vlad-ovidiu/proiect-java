@@ -30,6 +30,34 @@ public class RobertTest {
         neon[7] = new Neon(14, 17, (short) 4, 5.1f, 6.4f, "Helium", 10, 24, "Metal", false);
         neon[8] = new Neon(9, 13, (short) 2, 3.7f, 4.9f, "Argon", 12, 27, "Ceramic", true);
         neon[9] = new Neon(10, 12, (short) 1, 4.6f, 5.8f, "Mercury", 11, 29, "Glass", false);
+        System.out.println("");
+        
+        displayNeon(neon); //apelare metoda pentru iterarea si afisarea vectorului neon
+        displayBecLed(led); //apelare metoda pentru iterarea si afisarea vectorului led
+        
+        
+        
+    }
+    
+    public static void displayNeon(Neon[] neon){ //metoda pentru iterarea si afisarea vectorului neon
+        
+        
+        for(int i=0;i<10;i++)
+        {
+            System.out.println("Array neon "+i);
+            System.out.println(neon[i]);
+        }
+        
+    }
+    
+    public static void displayBecLed(BecLed[] led){ //metoda pentru iterarea vectorului led
+        
+        
+        for(int i=0;i<10;i++)
+        {
+            System.out.println("Array led "+i);
+            System.out.println(led[i]);
+        }
         
     }
 }
