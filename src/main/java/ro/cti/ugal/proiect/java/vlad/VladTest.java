@@ -1,5 +1,8 @@
 package ro.cti.ugal.proiect.java.vlad;
 
+import java.util.ArrayList;
+import ro.cti.ugal.proiect.java.SursaIluminat;
+
 public class VladTest {
     public static void main(String[] args) {
             BecClasic bec_clasic_gol = new BecClasic();
@@ -20,5 +23,30 @@ public class VladTest {
             
             BecEconomic copie_economic = new BecEconomic(bec_economic);
             System.out.println(copie_economic);
+            
+            ArrayList<SursaIluminat> lista_surse_iluminat = new ArrayList<>();
+            for(int i = 0; i < 10; i++) {
+                lista_surse_iluminat.add(new BecClasic(tungsten, 
+                        5.6e-8 + (1e-10 * i), 
+                        0.0045 + (1e-5 * i), 
+                        2700 + (100 * i), 
+                        15
+                ));
+                
+                lista_surse_iluminat.add(new BecEconomic(4, 
+                        1, 
+                        2.5, 
+                        (i % 2 == 0) ? "Electronic" : "Magnetic", 
+                        (i % 2 == 0), 
+                        1800 + (i * 100), 
+                        4000 + (i * 100), 
+                        (short)(26 + i), 
+                        0.8f
+                ));
+            }
+            
+            for(SursaIluminat i : lista_surse_iluminat) {
+                System.out.println(i);
+            }
     }
 }
