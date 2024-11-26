@@ -44,7 +44,7 @@ public class RobertTest {
         
         for(int i=0;i<10;i++)
         {
-            System.out.println("Array neon "+i);
+            System.out.println("Array neon "+ (i+1));
             System.out.println(neon[i]);
         }
         
@@ -55,7 +55,7 @@ public class RobertTest {
         
         for(int i=0;i<10;i++)
         {
-            System.out.println("Array led "+i);
+            System.out.println("Array led "+ (i+1));
             System.out.println(led[i]);
         }
         
