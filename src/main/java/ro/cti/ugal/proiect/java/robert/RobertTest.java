@@ -1,5 +1,7 @@
 package ro.cti.ugal.proiect.java.robert;
 
+import ro.cti.ugal.proiect.java.SursaIluminat;
+
 public class RobertTest {
     public static void main(String[] args) {
         BecLed b = new BecLed(2.5f, 10, 5, 6, 5, 6, (short)7, 8.2f);
@@ -8,6 +10,7 @@ public class RobertTest {
         System.out.println(n);
         BecLed[] led = new BecLed[10];
         Neon[] neon = new Neon[10];
+        SursaIluminat[] sursa = new SursaIluminat[10];
         //creearea instantelor din vectorul led
         led[0] = new BecLed(5.8f, 9, 3, 7, 1, 5, (short)8, 1.2f);
         led[1] = new BecLed(6.1f, 8, 4, 6, 2, 4, (short) 7, 1.5f);
@@ -20,23 +23,35 @@ public class RobertTest {
         led[8] = new BecLed(5.9f, 8, 3, 7, 3, 4, (short) 7, 1.5f);
         led[9] = new BecLed(5.2f, 11, 4, 6, 2, 7, (short) 9, 1.9f);
         //creearea instantelor din vectorul neon
-        neon[0] = new Neon(8, 15, (short) 2, 3.8f, 4.0f, "Argon", 10, 25, "Plastic", true);
+        neon[0] = new Neon(8, 15, (short) 2, 3.8f, 60.0f, "Argon", 10, 25, "Plastic", true);
         neon[1] = new Neon(12, 10, (short) 3, 5.0f, 6.2f, "Krypton", 9, 28, "Glass", false);
-        neon[2] = new Neon(9, 14, (short) 1, 4.2f, 4.8f, "Xenon", 11, 22, "Metal", true);
+        neon[2] = new Neon(9, 14, (short) 1, 4.2f, 400.8f, "Xenon", 11, 22, "Metal", true);
         neon[3] = new Neon(10, 13, (short) 4, 3.5f, 5.0f, "Neon", 12, 20, "Ceramic", false);
-        neon[4] = new Neon(11, 11, (short) 2, 4.8f, 5.7f, "Hydrogen", 13, 18, "Glass", true);
-        neon[5] = new Neon(13, 16, (short) 1, 3.9f, 4.3f, "Oxygen", 8, 30, "Plastic", false);
-        neon[6] = new Neon(7, 12, (short) 3, 4.5f, 6.0f, "Nitrogen", 14, 26, "Glass", true);
+        neon[4] = new Neon(neon[1]);
+        neon[5] = new Neon(13, 16, (short) 1, 3.9f, 260.3f, "Oxygen", 8, 30, "Plastic", false);
+        neon[6] = new Neon();
         neon[7] = new Neon(14, 17, (short) 4, 5.1f, 6.4f, "Helium", 10, 24, "Metal", false);
         neon[8] = new Neon(9, 13, (short) 2, 3.7f, 4.9f, "Argon", 12, 27, "Ceramic", true);
-        neon[9] = new Neon(10, 12, (short) 1, 4.6f, 5.8f, "Mercury", 11, 29, "Glass", false);
+        neon[9] = new Neon(10, 12, (short) 1, 4.6f, 300.8f, "Mercury", 11, 29, "Glass", false);
+        //crearea instantelor din vectorul sursa
+        sursa[0] = new SursaIluminat();
+        sursa[1] = new SursaIluminat(1000, 3000, (short)12, 85.0f);
+        sursa[2] = new SursaIluminat(1200, 4000, (short)15, 92.0f);
+        sursa[3] = new SursaIluminat(600, 3500, (short)8, 80.0f);
+        sursa[4] = new SursaIluminat(900, 5000, (short)10, 95.0f);
+        sursa[5] = new SursaIluminat(700, 6500, (short)7, 70.0f);
+        sursa[6] = new SursaIluminat(1100, 2700, (short)14, 88.0f);
+        sursa[7] = new SursaIluminat(750, 3200, (short)9, 82.0f);
+        sursa[8] = new SursaIluminat(950, 2800, (short)11, 87.0f);
+        sursa[9] = new SursaIluminat(1250, 4500, (short)16, 90.5f);
         System.out.println("");
         
         displayNeon(neon); //apelare metoda pentru iterarea si afisarea vectorului neon
         displayBecLed(led); //apelare metoda pentru iterarea si afisarea vectorului led
+        PrintNonOxygenNeon(neon);
+        EficientaEnergetica(led);
         
-        
-        
+       
     }
     
     public static void displayNeon(Neon[] neon){ //metoda pentru iterarea si afisarea vectorului neon
@@ -59,5 +74,27 @@ public class RobertTest {
             System.out.println(led[i]);
         }
         
+    }
+    public static void PrintNonOxygenNeon(Neon[] neon)
+    {
+        System.out.println("Filtrare neon dupa voltajul din gaz si tipul de gaz:");
+        for(int v = 0; v<10;v++)
+        {
+            if(neon[v].getGasVoltage()>250 && !"Oxygen".equals(neon[v].getGasType()))
+            {
+                System.out.println(neon[v]);
+            }
+        }
+    }
+    public static void EficientaEnergetica(BecLed[] led)
+    {
+        System.out.println("Filtrare bec cu led dupa eficienta energetica si durata de viata:");
+        for (int k=0; k<10;k++)
+        {
+            if(led[k].getLifeDuration() > 5 && led[k].getEnergyEfficiency() > 220)
+            {
+                System.out.println(led[k]);
+            }
+        }
     }
 }
