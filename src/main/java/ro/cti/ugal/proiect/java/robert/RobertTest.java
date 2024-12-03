@@ -48,7 +48,7 @@ public class RobertTest {
         
         displayNeon(neon); //apelare metoda pentru iterarea si afisarea vectorului neon
         displayBecLed(led); //apelare metoda pentru iterarea si afisarea vectorului led
-        PrintNonOxygenNeon(neon);
+        PrintNonOxygenNeon(neon); 
         EficientaEnergetica(led);
         
        
@@ -77,10 +77,10 @@ public class RobertTest {
     }
     public static void PrintNonOxygenNeon(Neon[] neon)
     {
-        System.out.println("Filtrare neon dupa voltajul din gaz si tipul de gaz:");
+        System.out.println("Filtrare neon dupa gas voltage si gas type:");
         for(int v = 0; v<10;v++)
         {
-            if(neon[v].getGasVoltage()>250 && !"Oxygen".equals(neon[v].getGasType()))
+            if(neon[v].getGasVoltage()>250 || "Oxygen".contains(neon[v].getGasType()))
             {
                 System.out.println(neon[v]);
             }
@@ -88,7 +88,7 @@ public class RobertTest {
     }
     public static void EficientaEnergetica(BecLed[] led)
     {
-        System.out.println("Filtrare bec cu led dupa eficienta energetica si durata de viata:");
+        System.out.println("Filtrare bec cu led dupa energy efficiency si life duration:");
         for (int k=0; k<10;k++)
         {
             if(led[k].getLifeDuration() > 5 && led[k].getEnergyEfficiency() > 220)
