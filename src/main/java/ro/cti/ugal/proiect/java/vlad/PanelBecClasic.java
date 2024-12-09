@@ -4,6 +4,7 @@
  */
 package ro.cti.ugal.proiect.java.vlad;
 
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import ro.cti.ugal.proiect.java.GUIPrincipal;
 import ro.cti.ugal.proiect.java.SursaIluminat;
@@ -15,18 +16,32 @@ import ro.cti.ugal.proiect.java.vlad.Material;
  * @author quadruple
  */
 public class PanelBecClasic extends javax.swing.JPanel {
-    public static Material[] materiale = {
+    private static Material[] materiale = {
         new Material("Tungsten", 5.6e-8, 0.0045),
         new Material("Grafit", 7.837e-6, -0.0005)
     };
     
-    public static Material getMaterialForName(String nume) {
+    private static Material getMaterialForName(String nume) {
         for(Material m : materiale)
             if(m.nume.equalsIgnoreCase(nume))
                 return m;
         
         // TODO: Daca nu a fost gasit nici un material cu acel nume, exceptie?
         return materiale[0];
+    }
+    
+    private ArrayList<BecClasic> listaBecuri = new ArrayList<>();
+    private void updateTabelFromLista() {
+        DefaultTableModel model = (DefaultTableModel)tabelPrincipal.getModel();
+        model.setRowCount(0);
+        
+        for(BecClasic c : listaBecuri)
+            model.addRow(new Object[]{c.materialFilament.nume, 
+                                      c.lungimeFilament, 
+                                      c.diametruFilament, 
+                                      c.temperaturaCuloare, 
+                                      c.luminozitate
+            });
     }
     
     /**
@@ -59,11 +74,14 @@ public class PanelBecClasic extends javax.swing.JPanel {
         tabelPrincipal = new javax.swing.JTable();
         butonAdaugare = new javax.swing.JButton();
         butonStergere = new javax.swing.JButton();
-        butonSalvare = new javax.swing.JButton();
-        butonIncarcare = new javax.swing.JButton();
+        labelFiltru1 = new javax.swing.JLabel();
+        comboBoxFiltruTermen1 = new javax.swing.JComboBox<>();
+        comboBoxFiltruConditie = new javax.swing.JComboBox<>();
+        textfieldFiltruTermen2 = new javax.swing.JTextField();
+        butonFiltrare = new javax.swing.JButton();
 
-        setMinimumSize(new java.awt.Dimension(800, 500));
-        setPreferredSize(new java.awt.Dimension(800, 500));
+        setMinimumSize(new java.awt.Dimension(1280, 720));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         comboBoxMaterial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tungsten", "Grafit" }));
         comboBoxMaterial.setName(""); // NOI18N
@@ -78,7 +96,7 @@ public class PanelBecClasic extends javax.swing.JPanel {
 
         labelDiametruFilament.setText("Diametru filament");
 
-        labelTempOp.setText("Temperatura Operationala");
+        labelTempOp.setText("Temp. Operationala");
 
         textfieldTempOp.setText("3200");
 
@@ -104,66 +122,72 @@ public class PanelBecClasic extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tabelPrincipal);
 
-        butonAdaugare.setText("Adaugare");
+        butonAdaugare.setText("Adauga");
         butonAdaugare.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butonAdaugareActionPerformed(evt);
             }
         });
 
-        butonStergere.setText("Stergere");
+        butonStergere.setText("Sterge");
         butonStergere.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butonStergereActionPerformed(evt);
             }
         });
 
-        butonSalvare.setText("Salvare");
+        labelFiltru1.setText("Filtrul");
 
-        butonIncarcare.setText("Incarcare");
+        comboBoxFiltruTermen1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lungime Filament", "Diametru Filament", "Temperatura Culoare", "Luminozitate" }));
+
+        comboBoxFiltruConditie.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Egal", "Mai mare", "Mai mic" }));
+
+        textfieldFiltruTermen2.setText("0.5");
+
+        butonFiltrare.setText("Filtreaza");
+        butonFiltrare.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butonFiltrareActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelTipMaterial)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(comboBoxMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(butonSalvare)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(butonAdaugare))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(butonIncarcare)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(butonStergere)))
-                                .addGap(19, 19, 19))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelLungimeFilament)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textfieldLungimeFilament, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(textfieldEficientaLuminoasa)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(labelEficientaLuminoasa))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(comboBoxMaterial, 0, 117, Short.MAX_VALUE)
+                                .addComponent(textfieldDiametruFilament)
+                                .addComponent(textfieldLungimeFilament))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(labelDiametruFilament)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textfieldDiametruFilament, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelEficientaLuminoasa)
-                            .addComponent(labelTempOp))
+                                .addComponent(labelLungimeFilament)
+                                .addComponent(labelTipMaterial)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(textfieldTempOp, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(labelTempOp)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(butonAdaugare)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textfieldTempOp)
-                            .addComponent(textfieldEficientaLuminoasa))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+                        .addComponent(butonStergere, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelFiltru1)
+                    .addComponent(comboBoxFiltruTermen1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboBoxFiltruConditie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textfieldFiltruTermen2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(butonFiltrare, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1019, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -188,21 +212,27 @@ public class PanelBecClasic extends javax.swing.JPanel {
                             .addComponent(labelDiametruFilament))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textfieldTempOp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelTempOp))
+                            .addComponent(labelTempOp)
+                            .addComponent(textfieldTempOp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(textfieldEficientaLuminoasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelEficientaLuminoasa))
-                        .addGap(30, 30, 30)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(butonAdaugare)
-                            .addComponent(butonSalvare))
+                            .addComponent(butonStergere))
+                        .addGap(43, 43, 43)
+                        .addComponent(labelFiltru1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(comboBoxFiltruTermen1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(butonStergere)
-                            .addComponent(butonIncarcare))
-                        .addGap(390, 390, 390))))
+                        .addComponent(comboBoxFiltruConditie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textfieldFiltruTermen2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(butonFiltrare)
+                        .addGap(355, 355, 355))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -215,34 +245,73 @@ public class PanelBecClasic extends javax.swing.JPanel {
         double temperaturaOperationala = Double.parseDouble(textfieldTempOp.getText());
         double eficientaLuminoasa = Double.parseDouble(textfieldEficientaLuminoasa.getText());
         
-        BecClasic c = new BecClasic(material, lungimeFilament, diametruFilament, temperaturaOperationala, eficientaLuminoasa);
-        
-        DefaultTableModel model = (DefaultTableModel)tabelPrincipal.getModel();
-        model.addRow(new Object[]{c.materialFilament.nume, c.lungimeFilament, c.diametruFilament, c.temperaturaCuloare, c.luminozitate});
+        listaBecuri.add(new BecClasic(material, lungimeFilament, diametruFilament, temperaturaOperationala, eficientaLuminoasa));
+        updateTabelFromLista();
     }//GEN-LAST:event_butonAdaugareActionPerformed
 
     private void butonStergereActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonStergereActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel)tabelPrincipal.getModel();
-        model.removeRow(tabelPrincipal.getSelectedRow());
+        listaBecuri.remove(tabelPrincipal.getSelectedRow());
+        updateTabelFromLista(); 
     }//GEN-LAST:event_butonStergereActionPerformed
+
+    private void butonFiltrareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonFiltrareActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)tabelPrincipal.getModel();
+
+        int filtruTermen1 = comboBoxFiltruTermen1.getSelectedIndex();
+        String filtruConditie = (String)comboBoxFiltruConditie.getSelectedItem();
+        String filtruTermen2 = textfieldFiltruTermen2.getText();
+        
+        double termen2 = Double.parseDouble(filtruTermen2);
+        for(int i = model.getRowCount() - 1; i >= 0; i--) {
+            System.out.println(i);
+            double termen1 = (double)model.getValueAt(i, filtruTermen1 + 1);
+            
+            switch(filtruConditie) {
+                default: 
+                case "Egal": {
+                    if(termen1 != termen2)
+                        listaBecuri.remove(i);
+                    break;
+                }
+                
+                case "Mai mare": {
+                    if(termen1 < termen2)
+                        listaBecuri.remove(i);
+                    break;
+                }
+                
+                case "Mai mic": {
+                    if(termen1 > termen2)
+                        listaBecuri.remove(i);
+                    break;
+                }
+            }
+        }
+        
+        updateTabelFromLista();
+    }//GEN-LAST:event_butonFiltrareActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butonAdaugare;
-    private javax.swing.JButton butonIncarcare;
-    private javax.swing.JButton butonSalvare;
+    private javax.swing.JButton butonFiltrare;
     private javax.swing.JButton butonStergere;
+    private javax.swing.JComboBox<String> comboBoxFiltruConditie;
+    private javax.swing.JComboBox<String> comboBoxFiltruTermen1;
     private javax.swing.JComboBox<String> comboBoxMaterial;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelDiametruFilament;
     private javax.swing.JLabel labelEficientaLuminoasa;
+    private javax.swing.JLabel labelFiltru1;
     private javax.swing.JLabel labelLungimeFilament;
     private javax.swing.JLabel labelTempOp;
     private javax.swing.JLabel labelTipMaterial;
     private javax.swing.JTable tabelPrincipal;
     private javax.swing.JTextField textfieldDiametruFilament;
     private javax.swing.JTextField textfieldEficientaLuminoasa;
+    private javax.swing.JTextField textfieldFiltruTermen2;
     private javax.swing.JTextField textfieldLungimeFilament;
     private javax.swing.JTextField textfieldTempOp;
     // End of variables declaration//GEN-END:variables

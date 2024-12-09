@@ -24,13 +24,11 @@ public class GUIPrincipal extends javax.swing.JFrame {
     public GUIPrincipal() {
         initComponents();
         
-        PanelPrincipal panouPrincipal = new PanelPrincipal();
         PanelBecClasic panouBecClasic = new PanelBecClasic();
         PanelBecEconomic panouBecEconomic = new PanelBecEconomic();
         PanelBecLed panouBecLed = new PanelBecLed();
         PanelBecNeon panouBecNeon = new PanelBecNeon();
         
-        jTabbedPane1.add("Principal", panouPrincipal);
         jTabbedPane1.add("Bec Clasic", panouBecClasic);
         jTabbedPane1.add("Bec Economic", panouBecEconomic);
         jTabbedPane1.add("Bec Led", panouBecLed);
@@ -49,6 +47,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Proiect POO");
         setMinimumSize(new java.awt.Dimension(1280, 720));
         setPreferredSize(new java.awt.Dimension(1280, 720));
 
@@ -58,17 +57,11 @@ public class GUIPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1286, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1298, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
         );
 
         pack();

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[800, 500]"/>
+      <Dimension value="[1280, 720]"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[800, 500]"/>
+      <Dimension value="[1280, 720]"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -25,56 +25,46 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="labelTipMaterial" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="comboBoxMaterial" min="-2" pref="83" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="textfieldEficientaLuminoasa" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="labelEficientaLuminoasa" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="comboBoxMaterial" alignment="0" pref="117" max="32767" attributes="0"/>
+                              <Component id="textfieldDiametruFilament" alignment="0" max="32767" attributes="0"/>
+                              <Component id="textfieldLungimeFilament" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="butonSalvare" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="butonAdaugare" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="butonIncarcare" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="butonStergere" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="labelLungimeFilament" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="textfieldLungimeFilament" min="-2" pref="64" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="labelDiametruFilament" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="textfieldDiametruFilament" min="-2" pref="64" max="-2" attributes="0"/>
+                              <Component id="labelLungimeFilament" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelTipMaterial" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="labelEficientaLuminoasa" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="textfieldTempOp" min="-2" pref="115" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="labelTempOp" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="textfieldTempOp" max="32767" attributes="0"/>
-                          <Component id="textfieldEficientaLuminoasa" max="32767" attributes="0"/>
-                      </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="butonAdaugare" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="butonStergere" min="-2" pref="79" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="labelFiltru1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxFiltruTermen1" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
+                  <Component id="comboBoxFiltruConditie" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="textfieldFiltruTermen2" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
+                  <Component id="butonFiltrare" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="568" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="1019" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -105,25 +95,30 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="textfieldTempOp" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="labelTempOp" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textfieldTempOp" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="textfieldEficientaLuminoasa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="labelEficientaLuminoasa" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="butonAdaugare" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="butonSalvare" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="butonStergere" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="butonIncarcare" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="390" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <Component id="labelFiltru1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="comboBoxFiltruTermen1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="comboBoxFiltruConditie" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="textfieldFiltruTermen2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="butonFiltrare" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="355" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -172,7 +167,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="labelTempOp">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Temperatura Operationala"/>
+        <Property name="text" type="java.lang.String" value="Temp. Operationala"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="textfieldTempOp">
@@ -246,7 +241,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="butonAdaugare">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Adaugare"/>
+        <Property name="text" type="java.lang.String" value="Adauga"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butonAdaugareActionPerformed"/>
@@ -254,21 +249,58 @@
     </Component>
     <Component class="javax.swing.JButton" name="butonStergere">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Stergere"/>
+        <Property name="text" type="java.lang.String" value="Sterge"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butonStergereActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="butonSalvare">
+    <Component class="javax.swing.JLabel" name="labelFiltru1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Salvare"/>
+        <Property name="text" type="java.lang.String" value="Filtrul"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="butonIncarcare">
+    <Component class="javax.swing.JComboBox" name="comboBoxFiltruTermen1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Incarcare"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Lungime Filament"/>
+            <StringItem index="1" value="Diametru Filament"/>
+            <StringItem index="2" value="Temperatura Culoare"/>
+            <StringItem index="3" value="Luminozitate"/>
+          </StringArray>
+        </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="comboBoxFiltruConditie">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Egal"/>
+            <StringItem index="1" value="Mai mare"/>
+            <StringItem index="2" value="Mai mic"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldFiltruTermen2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="butonFiltrare">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Filtreaza"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butonFiltrareActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

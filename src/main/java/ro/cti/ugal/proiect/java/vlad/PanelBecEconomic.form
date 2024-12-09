@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1280, 720]"/>
+    </Property>
+  </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -16,28 +21,419 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="199" max="32767" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="textfieldConsum" min="-2" pref="202" max="-2" attributes="0"/>
+                      <EmptySpace pref="71" max="32767" attributes="0"/>
+                      <Component id="labelConsum" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="textfieldDurataIncalzire" max="32767" attributes="0"/>
+                          <Component id="textfieldTipBalast" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="labelDurataIncalzire" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelTipBalast" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="textfieldContinutMercur" max="32767" attributes="0"/>
+                          <Component id="textfieldContinutArgon" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelContinutMercur" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelContinutArgon" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="textfieldFiltruMercur" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textfieldIndiceRC" alignment="0" pref="202" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelIndiceRC" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelFilterMercur" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="textfieldLuminozitate" max="32767" attributes="0"/>
+                          <Component id="textfieldTemperaturaCuloare" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labelTemperaturaCuloare" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelLuminozitate" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="textfieldFiltruArgon" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="labelFilterArgon" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="comboboxFiltruMod" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textfieldFiltruDurataIncalzire" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="labelFilterDurataIncalzire" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelFilterMod" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="butonAdaugare" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="butonSterge" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="checkboxReglabil" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
+                          <Component id="labelFiltru" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="butonFiltreaza" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="910" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="180" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelContinutMercur" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textfieldContinutMercur" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelContinutArgon" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textfieldContinutArgon" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelDurataIncalzire" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textfieldDurataIncalzire" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelTipBalast" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textfieldTipBalast" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="checkboxReglabil" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelLuminozitate" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textfieldLuminozitate" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="textfieldTemperaturaCuloare" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelTemperaturaCuloare" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelConsum" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textfieldConsum" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelIndiceRC" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textfieldIndiceRC" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="butonAdaugare" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="butonSterge" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="labelFiltru" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="textfieldFiltruMercur" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelFilterMercur" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelFilterArgon" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textfieldFiltruArgon" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelFilterDurataIncalzire" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="textfieldFiltruDurataIncalzire" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="comboboxFiltruMod" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelFilterMod" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="butonFiltreaza" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jScrollPane1" alignment="0" min="-2" pref="550" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="164" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="labelContinutMercur">
       <Properties>
-        <Property name="text" type="java.lang.String" value="bec economic"/>
+        <Property name="text" type="java.lang.String" value="Continut mercur"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldContinutMercur">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="4"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelContinutArgon">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Continut argon"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldContinutArgon">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDurataIncalzire">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Durata incalzire"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldDurataIncalzire">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="2.5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTipBalast">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tip balast"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldTipBalast">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Electronic"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="checkboxReglabil">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reglabil"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelLuminozitate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Luminozitate"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldLuminozitate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="1200"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTemperaturaCuloare">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Temperatura Culoare"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldTemperaturaCuloare">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="3200"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelConsum">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Consum"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldConsum">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="26"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelIndiceRC">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Indice redare culoare"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldIndiceRC">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="80"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="butonAdaugare">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Adauga"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butonAdaugareActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="butonSterge">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sterge"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butonStergeActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="tabelPrincipal">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="9" rowCount="0">
+                <Column editable="true" title="Continut Mercur" type="java.lang.Double"/>
+                <Column editable="true" title="Continut Argon" type="java.lang.Double"/>
+                <Column editable="true" title="Durata Incalzire" type="java.lang.Double"/>
+                <Column editable="true" title="Tip Balast" type="java.lang.String"/>
+                <Column editable="true" title="Reglabil" type="java.lang.Boolean"/>
+                <Column editable="true" title="Luminozitate" type="java.lang.Integer"/>
+                <Column editable="true" title="Temperatura Culoare" type="java.lang.Integer"/>
+                <Column editable="true" title="Consum" type="java.lang.Short"/>
+                <Column editable="true" title="Indice Redare Culoare" type="java.lang.Float"/>
+              </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="labelFiltru">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Filtru"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldFiltruMercur">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="3"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelFilterMercur">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Continut mercur"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelFilterArgon">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Continut argon"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldFiltruArgon">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelFilterDurataIncalzire">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Durata Incalzire"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldFiltruDurataIncalzire">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="2.0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="comboboxFiltruMod">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Egal"/>
+            <StringItem index="1" value="Mai mic"/>
+            <StringItem index="2" value="Mai mare"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelFilterMod">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mod Filtrare"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="butonFiltreaza">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Filtreaza"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butonFiltreazaActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -4,12 +4,32 @@
  */
 package ro.cti.ugal.proiect.java.vlad;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author quadruple
  */
 public class PanelBecEconomic extends javax.swing.JPanel {
-
+    private ArrayList<BecEconomic> listaBecuri = new ArrayList<>();
+    private void updateTabelFromLista() {
+        DefaultTableModel model = (DefaultTableModel)tabelPrincipal.getModel();
+        model.setRowCount(0);
+        
+        for(BecEconomic c : listaBecuri)
+            model.addRow(new Object[]{c.continutMercur, 
+                                      c.continutArgon, 
+                                      c.durataIncalzire, 
+                                      c.tipBalast,
+                                      c.reglabil,
+                                      c.luminozitate,
+                                      c.temperaturaCuloare,
+                                      c.consum,
+                                      c.indiceRedareCuloare
+            });
+    }
+    
     /**
      * Creates new form PanelBecEconomic
      */
@@ -26,30 +46,363 @@ public class PanelBecEconomic extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        labelContinutMercur = new javax.swing.JLabel();
+        textfieldContinutMercur = new javax.swing.JTextField();
+        labelContinutArgon = new javax.swing.JLabel();
+        textfieldContinutArgon = new javax.swing.JTextField();
+        labelDurataIncalzire = new javax.swing.JLabel();
+        textfieldDurataIncalzire = new javax.swing.JTextField();
+        labelTipBalast = new javax.swing.JLabel();
+        textfieldTipBalast = new javax.swing.JTextField();
+        checkboxReglabil = new javax.swing.JCheckBox();
+        labelLuminozitate = new javax.swing.JLabel();
+        textfieldLuminozitate = new javax.swing.JTextField();
+        labelTemperaturaCuloare = new javax.swing.JLabel();
+        textfieldTemperaturaCuloare = new javax.swing.JTextField();
+        labelConsum = new javax.swing.JLabel();
+        textfieldConsum = new javax.swing.JTextField();
+        labelIndiceRC = new javax.swing.JLabel();
+        textfieldIndiceRC = new javax.swing.JTextField();
+        butonAdaugare = new javax.swing.JButton();
+        butonSterge = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelPrincipal = new javax.swing.JTable();
+        labelFiltru = new javax.swing.JLabel();
+        textfieldFiltruMercur = new javax.swing.JTextField();
+        labelFilterMercur = new javax.swing.JLabel();
+        labelFilterArgon = new javax.swing.JLabel();
+        textfieldFiltruArgon = new javax.swing.JTextField();
+        labelFilterDurataIncalzire = new javax.swing.JLabel();
+        textfieldFiltruDurataIncalzire = new javax.swing.JTextField();
+        comboboxFiltruMod = new javax.swing.JComboBox<>();
+        labelFilterMod = new javax.swing.JLabel();
+        butonFiltreaza = new javax.swing.JButton();
 
-        jLabel1.setText("bec economic");
+        setMinimumSize(new java.awt.Dimension(1280, 720));
+
+        labelContinutMercur.setText("Continut mercur");
+
+        textfieldContinutMercur.setText("4");
+
+        labelContinutArgon.setText("Continut argon");
+
+        textfieldContinutArgon.setText("1");
+
+        labelDurataIncalzire.setText("Durata incalzire");
+
+        textfieldDurataIncalzire.setText("2.5");
+
+        labelTipBalast.setText("Tip balast");
+
+        textfieldTipBalast.setText("Electronic");
+
+        checkboxReglabil.setText("Reglabil");
+
+        labelLuminozitate.setText("Luminozitate");
+
+        textfieldLuminozitate.setText("1200");
+
+        labelTemperaturaCuloare.setText("Temperatura Culoare");
+
+        textfieldTemperaturaCuloare.setText("3200");
+
+        labelConsum.setText("Consum");
+
+        textfieldConsum.setText("26");
+
+        labelIndiceRC.setText("Indice redare culoare");
+
+        textfieldIndiceRC.setText("80");
+
+        butonAdaugare.setText("Adauga");
+        butonAdaugare.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butonAdaugareActionPerformed(evt);
+            }
+        });
+
+        butonSterge.setText("Sterge");
+        butonSterge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butonStergeActionPerformed(evt);
+            }
+        });
+
+        tabelPrincipal.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Continut Mercur", "Continut Argon", "Durata Incalzire", "Tip Balast", "Reglabil", "Luminozitate", "Temperatura Culoare", "Consum", "Indice Redare Culoare"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Short.class, java.lang.Float.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tabelPrincipal);
+
+        labelFiltru.setText("Filtru");
+
+        textfieldFiltruMercur.setText("3");
+
+        labelFilterMercur.setText("Continut mercur");
+
+        labelFilterArgon.setText("Continut argon");
+
+        textfieldFiltruArgon.setText("0.5");
+
+        labelFilterDurataIncalzire.setText("Durata Incalzire");
+
+        textfieldFiltruDurataIncalzire.setText("2.0");
+
+        comboboxFiltruMod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Egal", "Mai mic", "Mai mare" }));
+
+        labelFilterMod.setText("Mod Filtrare");
+
+        butonFiltreaza.setText("Filtreaza");
+        butonFiltreaza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butonFiltreazaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(199, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(126, 126, 126))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(textfieldConsum, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                        .addComponent(labelConsum))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textfieldDurataIncalzire)
+                            .addComponent(textfieldTipBalast))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelDurataIncalzire)
+                            .addComponent(labelTipBalast)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textfieldContinutMercur)
+                            .addComponent(textfieldContinutArgon))
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelContinutMercur)
+                            .addComponent(labelContinutArgon, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(textfieldFiltruMercur, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textfieldIndiceRC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelIndiceRC, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelFilterMercur, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(textfieldLuminozitate)
+                            .addComponent(textfieldTemperaturaCuloare))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelTemperaturaCuloare, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelLuminozitate, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(textfieldFiltruArgon)
+                        .addGap(35, 35, 35)
+                        .addComponent(labelFilterArgon))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(comboboxFiltruMod, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textfieldFiltruDurataIncalzire))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelFilterDurataIncalzire)
+                            .addComponent(labelFilterMod)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(butonAdaugare)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(butonSterge))
+                            .addComponent(checkboxReglabil, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelFiltru)
+                            .addComponent(butonFiltreaza))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jLabel1)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelContinutMercur)
+                            .addComponent(textfieldContinutMercur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelContinutArgon)
+                            .addComponent(textfieldContinutArgon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelDurataIncalzire)
+                            .addComponent(textfieldDurataIncalzire, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelTipBalast)
+                            .addComponent(textfieldTipBalast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(checkboxReglabil)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelLuminozitate)
+                            .addComponent(textfieldLuminozitate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textfieldTemperaturaCuloare, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelTemperaturaCuloare))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelConsum)
+                            .addComponent(textfieldConsum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelIndiceRC)
+                            .addComponent(textfieldIndiceRC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(butonAdaugare)
+                            .addComponent(butonSterge))
+                        .addGap(37, 37, 37)
+                        .addComponent(labelFiltru)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textfieldFiltruMercur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelFilterMercur))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelFilterArgon)
+                            .addComponent(textfieldFiltruArgon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelFilterDurataIncalzire)
+                            .addComponent(textfieldFiltruDurataIncalzire, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(comboboxFiltruMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelFilterMod))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(butonFiltreaza))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void butonAdaugareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonAdaugareActionPerformed
+        // TODO add your handling code here:
+        listaBecuri.add(new BecEconomic(
+                Double.parseDouble(textfieldContinutMercur.getText()),
+                Double.parseDouble(textfieldContinutArgon.getText()),
+                Double.parseDouble(textfieldDurataIncalzire.getText()),
+                textfieldTipBalast.getText(),
+                checkboxReglabil.isSelected(),
+                Integer.parseInt(textfieldLuminozitate.getText()),
+                Integer.parseInt(textfieldTemperaturaCuloare.getText()),
+                Short.parseShort(textfieldConsum.getText()),
+                Float.parseFloat(textfieldIndiceRC.getText())
+        ));
+        
+        updateTabelFromLista();
+    }//GEN-LAST:event_butonAdaugareActionPerformed
+
+    private void butonStergeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonStergeActionPerformed
+        // TODO add your handling code here:
+        listaBecuri.remove(tabelPrincipal.getSelectedRow());
+        updateTabelFromLista();
+    }//GEN-LAST:event_butonStergeActionPerformed
+
+    private void butonFiltreazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonFiltreazaActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)tabelPrincipal.getModel();
+
+        double filtruMercur = Double.parseDouble(textfieldFiltruMercur.getText());
+        double filtruArgon = Double.parseDouble(textfieldFiltruArgon.getText());
+        double filtruDurata = Double.parseDouble(textfieldFiltruDurataIncalzire.getText());
+        String modFiltrare = (String)comboboxFiltruMod.getSelectedItem();
+        
+        for(int i = model.getRowCount() - 1; i >= 0; i--) {
+            System.out.println(i);
+            double obiectMercur = listaBecuri.get(i).continutMercur;
+            double obiectArgon = listaBecuri.get(i).continutArgon;
+            double obiectDurata = listaBecuri.get(i).durataIncalzire;
+                    
+            switch(modFiltrare) {
+                default:
+                case "Egal": {
+                    if(obiectMercur != filtruMercur || obiectArgon != filtruArgon || obiectDurata != filtruDurata)
+                        listaBecuri.remove(i);
+                    break;
+                }
+                
+                case "Mai mic": {
+                    if(obiectMercur > filtruMercur || obiectArgon > filtruArgon || obiectDurata > filtruDurata)
+                        listaBecuri.remove(i);
+                    break;
+                }
+                
+                case "Mai mare": {
+                    if(obiectMercur < filtruMercur || obiectArgon < filtruArgon || obiectDurata < filtruDurata)
+                        listaBecuri.remove(i);
+                    break;
+                }
+            }
+        }
+        
+        updateTabelFromLista();
+    }//GEN-LAST:event_butonFiltreazaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton butonAdaugare;
+    private javax.swing.JButton butonFiltreaza;
+    private javax.swing.JButton butonSterge;
+    private javax.swing.JCheckBox checkboxReglabil;
+    private javax.swing.JComboBox<String> comboboxFiltruMod;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelConsum;
+    private javax.swing.JLabel labelContinutArgon;
+    private javax.swing.JLabel labelContinutMercur;
+    private javax.swing.JLabel labelDurataIncalzire;
+    private javax.swing.JLabel labelFilterArgon;
+    private javax.swing.JLabel labelFilterDurataIncalzire;
+    private javax.swing.JLabel labelFilterMercur;
+    private javax.swing.JLabel labelFilterMod;
+    private javax.swing.JLabel labelFiltru;
+    private javax.swing.JLabel labelIndiceRC;
+    private javax.swing.JLabel labelLuminozitate;
+    private javax.swing.JLabel labelTemperaturaCuloare;
+    private javax.swing.JLabel labelTipBalast;
+    private javax.swing.JTable tabelPrincipal;
+    private javax.swing.JTextField textfieldConsum;
+    private javax.swing.JTextField textfieldContinutArgon;
+    private javax.swing.JTextField textfieldContinutMercur;
+    private javax.swing.JTextField textfieldDurataIncalzire;
+    private javax.swing.JTextField textfieldFiltruArgon;
+    private javax.swing.JTextField textfieldFiltruDurataIncalzire;
+    private javax.swing.JTextField textfieldFiltruMercur;
+    private javax.swing.JTextField textfieldIndiceRC;
+    private javax.swing.JTextField textfieldLuminozitate;
+    private javax.swing.JTextField textfieldTemperaturaCuloare;
+    private javax.swing.JTextField textfieldTipBalast;
     // End of variables declaration//GEN-END:variables
 }
