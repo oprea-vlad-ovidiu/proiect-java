@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[800, 500]"/>
+    </Property>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[800, 500]"/>
+    </Property>
+  </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -17,26 +25,249 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="279" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="labelTipMaterial" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="comboBoxMaterial" min="-2" pref="83" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="butonSalvare" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="butonAdaugare" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="butonIncarcare" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="butonStergere" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="labelLungimeFilament" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="textfieldLungimeFilament" min="-2" pref="64" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="labelDiametruFilament" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="textfieldDiametruFilament" min="-2" pref="64" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="labelEficientaLuminoasa" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelTempOp" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="textfieldTempOp" max="32767" attributes="0"/>
+                          <Component id="textfieldEficientaLuminoasa" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="568" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="185" max="32767" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jScrollPane1" min="-2" pref="558" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="comboBoxMaterial" alignment="3" max="32767" attributes="0"/>
+                          <Component id="labelTipMaterial" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="textfieldLungimeFilament" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelLungimeFilament" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="textfieldDiametruFilament" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelDiametruFilament" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="textfieldTempOp" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelTempOp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="textfieldEficientaLuminoasa" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelEficientaLuminoasa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="butonAdaugare" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="butonSalvare" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="butonStergere" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="butonIncarcare" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="390" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JComboBox" name="comboBoxMaterial">
       <Properties>
-        <Property name="text" type="java.lang.String" value="smekerie"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="2">
+            <StringItem index="0" value="Tungsten"/>
+            <StringItem index="1" value="Grafit"/>
+          </StringArray>
+        </Property>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTipMaterial">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Material"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldLungimeFilament">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelLungimeFilament">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lungime Filament"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldDiametruFilament">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="4.6e-5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelDiametruFilament">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Diametru filament"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTempOp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Temperatura Operationala"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldTempOp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="3200"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelEficientaLuminoasa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Eficienta Luminoasa"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textfieldEficientaLuminoasa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="15"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="tabelPrincipal">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="5" rowCount="0">
+                <Column editable="true" title="Material" type="java.lang.String"/>
+                <Column editable="true" title="Lungime Filament" type="java.lang.Double"/>
+                <Column editable="true" title="Diametru Filament" type="java.lang.Double"/>
+                <Column editable="true" title="Temperatura Culoare" type="java.lang.Double"/>
+                <Column editable="true" title="Luminozitate" type="java.lang.Double"/>
+              </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="butonAdaugare">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Adaugare"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butonAdaugareActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="butonStergere">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Stergere"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butonStergereActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="butonSalvare">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Salvare"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="butonIncarcare">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Incarcare"/>
       </Properties>
     </Component>
   </SubComponents>

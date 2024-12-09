@@ -4,22 +4,36 @@
  */
 package ro.cti.ugal.proiect.java.vlad;
 
+import javax.swing.table.DefaultTableModel;
 import ro.cti.ugal.proiect.java.GUIPrincipal;
 import ro.cti.ugal.proiect.java.SursaIluminat;
+import ro.cti.ugal.proiect.java.vlad.BecClasic;
+import ro.cti.ugal.proiect.java.vlad.Material;
 
 /**
  *
  * @author quadruple
  */
 public class PanelBecClasic extends javax.swing.JPanel {
-
+    public static Material[] materiale = {
+        new Material("Tungsten", 5.6e-8, 0.0045),
+        new Material("Grafit", 7.837e-6, -0.0005)
+    };
+    
+    public static Material getMaterialForName(String nume) {
+        for(Material m : materiale)
+            if(m.nume.equalsIgnoreCase(nume))
+                return m;
+        
+        // TODO: Daca nu a fost gasit nici un material cu acel nume, exceptie?
+        return materiale[0];
+    }
+    
     /**
      * Creates new form PanelBecClasic
      */
     public PanelBecClasic() {
         initComponents();
-        
-        GUIPrincipal.listaSurseIluminat.add(new SursaIluminat());
     }
 
     /**
@@ -31,30 +45,205 @@ public class PanelBecClasic extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        comboBoxMaterial = new javax.swing.JComboBox<>();
+        labelTipMaterial = new javax.swing.JLabel();
+        textfieldLungimeFilament = new javax.swing.JTextField();
+        labelLungimeFilament = new javax.swing.JLabel();
+        textfieldDiametruFilament = new javax.swing.JTextField();
+        labelDiametruFilament = new javax.swing.JLabel();
+        labelTempOp = new javax.swing.JLabel();
+        textfieldTempOp = new javax.swing.JTextField();
+        labelEficientaLuminoasa = new javax.swing.JLabel();
+        textfieldEficientaLuminoasa = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelPrincipal = new javax.swing.JTable();
+        butonAdaugare = new javax.swing.JButton();
+        butonStergere = new javax.swing.JButton();
+        butonSalvare = new javax.swing.JButton();
+        butonIncarcare = new javax.swing.JButton();
 
-        jLabel1.setText("smekerie");
+        setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
+
+        comboBoxMaterial.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tungsten", "Grafit" }));
+        comboBoxMaterial.setName(""); // NOI18N
+
+        labelTipMaterial.setText("Material");
+
+        textfieldLungimeFilament.setText("0.5");
+
+        labelLungimeFilament.setText("Lungime Filament");
+
+        textfieldDiametruFilament.setText("4.6e-5");
+
+        labelDiametruFilament.setText("Diametru filament");
+
+        labelTempOp.setText("Temperatura Operationala");
+
+        textfieldTempOp.setText("3200");
+
+        labelEficientaLuminoasa.setText("Eficienta Luminoasa");
+
+        textfieldEficientaLuminoasa.setText("15");
+
+        tabelPrincipal.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Material", "Lungime Filament", "Diametru Filament", "Temperatura Culoare", "Luminozitate"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tabelPrincipal);
+
+        butonAdaugare.setText("Adaugare");
+        butonAdaugare.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butonAdaugareActionPerformed(evt);
+            }
+        });
+
+        butonStergere.setText("Stergere");
+        butonStergere.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butonStergereActionPerformed(evt);
+            }
+        });
+
+        butonSalvare.setText("Salvare");
+
+        butonIncarcare.setText("Incarcare");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(jLabel1)
-                .addContainerGap(279, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelTipMaterial)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(comboBoxMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(butonSalvare)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(butonAdaugare))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(butonIncarcare)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(butonStergere)))
+                                .addGap(19, 19, 19))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelLungimeFilament)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(textfieldLungimeFilament, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelDiametruFilament)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(textfieldDiametruFilament, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelEficientaLuminoasa)
+                            .addComponent(labelTempOp))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(textfieldTempOp)
+                            .addComponent(textfieldEficientaLuminoasa))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(185, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(99, 99, 99))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(comboBoxMaterial)
+                            .addComponent(labelTipMaterial))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textfieldLungimeFilament, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelLungimeFilament))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textfieldDiametruFilament, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelDiametruFilament))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textfieldTempOp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelTempOp))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textfieldEficientaLuminoasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelEficientaLuminoasa))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(butonAdaugare)
+                            .addComponent(butonSalvare))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(butonStergere)
+                            .addComponent(butonIncarcare))
+                        .addGap(390, 390, 390))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void butonAdaugareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonAdaugareActionPerformed
+        // TODO add your handling code here:
+
+        Material material = getMaterialForName((String)comboBoxMaterial.getSelectedItem());
+        double lungimeFilament = Double.parseDouble(textfieldLungimeFilament.getText());
+        double diametruFilament = Double.parseDouble(textfieldDiametruFilament.getText());
+        double temperaturaOperationala = Double.parseDouble(textfieldTempOp.getText());
+        double eficientaLuminoasa = Double.parseDouble(textfieldEficientaLuminoasa.getText());
+        
+        BecClasic c = new BecClasic(material, lungimeFilament, diametruFilament, temperaturaOperationala, eficientaLuminoasa);
+        
+        DefaultTableModel model = (DefaultTableModel)tabelPrincipal.getModel();
+        model.addRow(new Object[]{c.materialFilament.nume, c.lungimeFilament, c.diametruFilament, c.temperaturaCuloare, c.luminozitate});
+    }//GEN-LAST:event_butonAdaugareActionPerformed
+
+    private void butonStergereActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonStergereActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)tabelPrincipal.getModel();
+        model.removeRow(tabelPrincipal.getSelectedRow());
+    }//GEN-LAST:event_butonStergereActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton butonAdaugare;
+    private javax.swing.JButton butonIncarcare;
+    private javax.swing.JButton butonSalvare;
+    private javax.swing.JButton butonStergere;
+    private javax.swing.JComboBox<String> comboBoxMaterial;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelDiametruFilament;
+    private javax.swing.JLabel labelEficientaLuminoasa;
+    private javax.swing.JLabel labelLungimeFilament;
+    private javax.swing.JLabel labelTempOp;
+    private javax.swing.JLabel labelTipMaterial;
+    private javax.swing.JTable tabelPrincipal;
+    private javax.swing.JTextField textfieldDiametruFilament;
+    private javax.swing.JTextField textfieldEficientaLuminoasa;
+    private javax.swing.JTextField textfieldLungimeFilament;
+    private javax.swing.JTextField textfieldTempOp;
     // End of variables declaration//GEN-END:variables
 }
