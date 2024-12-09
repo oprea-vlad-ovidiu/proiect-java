@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import ro.cti.ugal.proiect.java.SursaIluminat;
 
 public class VladTest {
-    
     public static void PrintAllBecClasicLungimeLumens(ArrayList<SursaIluminat> array, double minLungime, int minLumens) {
         for(SursaIluminat si : array) {
             if(!(si instanceof BecClasic))
@@ -16,7 +15,7 @@ public class VladTest {
         }
     }
     
-    public static void PrintAllBecEconomic(ArrayList<SursaIluminat> array, boolean reglabil, int minTempCuloare, int maxTempCuloare) {
+    public static void PrintAllBecEconomicReglabilTempCuloare(ArrayList<SursaIluminat> array, boolean reglabil, int minTempCuloare, int maxTempCuloare) {
         for(SursaIluminat si : array) {
             if(!(si instanceof BecEconomic))
                 continue;
@@ -28,7 +27,6 @@ public class VladTest {
     }
     
     public static void main(String[] args) {
-            
             BecClasic bec_clasic_gol = new BecClasic();
             // System.out.println(bec_clasic_gol);
         
@@ -74,6 +72,6 @@ public class VladTest {
                 // System.out.println(i);
               
             PrintAllBecClasicLungimeLumens(lista_surse_iluminat, 2.5, 2500);
-            PrintAllBecEconomic(lista_surse_iluminat, true, 3000, 4000);
+            PrintAllBecEconomicReglabilTempCuloare(lista_surse_iluminat, true, 3000, 4000);
     }
 }
