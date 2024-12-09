@@ -17,7 +17,7 @@ import ro.cti.ugal.proiect.java.vlad.PanelBecEconomic;
 public class GUIPrincipal extends javax.swing.JFrame {
     
     public static ArrayList<SursaIluminat> listaSurseIluminat = new ArrayList<>();
-
+    
     /**
      * Creates new form GUIPrincipal
      */
