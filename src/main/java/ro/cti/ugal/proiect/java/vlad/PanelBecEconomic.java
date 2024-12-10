@@ -18,15 +18,15 @@ public class PanelBecEconomic extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for(BecEconomic c : listaBecuri)
-            model.addRow(new Object[]{c.continutMercur, 
-                                      c.continutArgon, 
-                                      c.durataIncalzire, 
+            model.addRow(new Object[]{(double)c.continutMercur, 
+                                      (double)c.continutArgon, 
+                                      (double)c.durataIncalzire, 
                                       c.tipBalast,
                                       c.reglabil,
-                                      c.luminozitate,
-                                      c.temperaturaCuloare,
-                                      c.consum,
-                                      c.indiceRedareCuloare
+                                      (double)c.luminozitate,
+                                      (double)c.temperaturaCuloare,
+                                      (double)c.consum,
+                                      (double)c.indiceRedareCuloare
             });
     }
     
@@ -35,6 +35,13 @@ public class PanelBecEconomic extends javax.swing.JPanel {
      */
     public PanelBecEconomic() {
         initComponents();
+        
+        // VladTest.main(new String[]{});
+        
+        for(BecEconomic i : VladTest.listaBecuriEconomice)
+            listaBecuri.add(i);
+        
+        updateTabelFromLista();
     }
 
     /**

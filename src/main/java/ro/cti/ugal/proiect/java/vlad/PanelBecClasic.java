@@ -37,10 +37,10 @@ public class PanelBecClasic extends javax.swing.JPanel {
         
         for(BecClasic c : listaBecuri)
             model.addRow(new Object[]{c.materialFilament.nume, 
-                                      c.lungimeFilament, 
-                                      c.diametruFilament, 
-                                      c.temperaturaCuloare, 
-                                      c.luminozitate
+                                      (double)c.lungimeFilament, 
+                                      (double)c.diametruFilament, 
+                                      (double)c.temperaturaCuloare, 
+                                      (double)c.luminozitate
             });
     }
     
@@ -49,6 +49,13 @@ public class PanelBecClasic extends javax.swing.JPanel {
      */
     public PanelBecClasic() {
         initComponents();
+        
+        VladTest.main(new String[]{});
+        
+        for(BecClasic i : VladTest.listaBecuriClasic)
+            listaBecuri.add(i);
+        
+        updateTabelFromLista();
     }
 
     /**
@@ -266,7 +273,8 @@ public class PanelBecClasic extends javax.swing.JPanel {
         double termen2 = Double.parseDouble(filtruTermen2);
         for(int i = model.getRowCount() - 1; i >= 0; i--) {
             System.out.println(i);
-            double termen1 = (double)model.getValueAt(i, filtruTermen1 + 1);
+            System.out.println(model.getValueAt(i, filtruTermen1 + 1).getClass().getSimpleName());
+            Double termen1 = (double) model.getValueAt(i, filtruTermen1 + 1);
             
             switch(filtruConditie) {
                 default: 

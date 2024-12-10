@@ -26,6 +26,9 @@ public class VladTest {
         }
     }
     
+    public static ArrayList<BecClasic> listaBecuriClasic = new ArrayList<>();
+    public static ArrayList<BecEconomic> listaBecuriEconomice = new ArrayList<>();
+    
     public static void main(String[] args) {
             BecClasic bec_clasic_gol = new BecClasic();
             // System.out.println(bec_clasic_gol);
@@ -47,16 +50,16 @@ public class VladTest {
             BecEconomic copie_economic = new BecEconomic(bec_economic);
             // System.out.println(copie_economic);
             
-            ArrayList<SursaIluminat> lista_surse_iluminat = new ArrayList<>();
+            
             for(int i = 0; i < 10; i++) {
-                lista_surse_iluminat.add(new BecClasic(tungsten, 
+                listaBecuriClasic.add(new BecClasic(tungsten, 
                         0.58 * i, 
                         4.6e-5 * i, 
                         2700 + (100 * i), 
                         15
                 ));
                 
-                lista_surse_iluminat.add(new BecEconomic(4, 
+                listaBecuriEconomice.add(new BecEconomic(4, 
                         1, 
                         2.5, 
                         (i % 2 == 0) ? "Electronic" : "Magnetic", 
@@ -71,7 +74,7 @@ public class VladTest {
             // for(SursaIluminat i : lista_surse_iluminat) {
                 // System.out.println(i);
               
-            PrintAllBecClasicLungimeLumens(lista_surse_iluminat, 2.5, 2500);
-            PrintAllBecEconomicReglabilTempCuloare(lista_surse_iluminat, true, 3000, 4000);
+            // PrintAllBecClasicLungimeLumens(lista_surse_iluminat, 2.5, 2500);
+            // PrintAllBecEconomicReglabilTempCuloare(lista_surse_iluminat, true, 3000, 4000);
     }
 }
