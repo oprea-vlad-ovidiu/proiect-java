@@ -4,7 +4,14 @@
  */
 package ro.cti.ugal.proiect.java.vlad;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -12,6 +19,9 @@ import javax.swing.table.DefaultTableModel;
  * @author quadruple
  */
 public class PanelBecEconomic extends javax.swing.JPanel {
+    private static FileFilter filter = new FileNameExtensionFilter("Comma-separated values(.csv)", "csv");
+    private static JFileChooser chooser = new JFileChooser();
+    
     private ArrayList<BecEconomic> listaBecuri = new ArrayList<>();
     private void updateTabelFromLista() {
         DefaultTableModel model = (DefaultTableModel)tabelPrincipal.getModel();
@@ -37,6 +47,7 @@ public class PanelBecEconomic extends javax.swing.JPanel {
         initComponents();
         
         // VladTest.main(new String[]{});
+        chooser.setFileFilter(filter);
         
         for(BecEconomic i : VladTest.listaBecuriEconomice)
             listaBecuri.add(i);
@@ -84,6 +95,8 @@ public class PanelBecEconomic extends javax.swing.JPanel {
         comboboxFiltruMod = new javax.swing.JComboBox<>();
         labelFilterMod = new javax.swing.JLabel();
         butonFiltreaza = new javax.swing.JButton();
+        butonOpen = new javax.swing.JButton();
+        butonSave = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(1280, 720));
 
@@ -178,6 +191,20 @@ public class PanelBecEconomic extends javax.swing.JPanel {
             }
         });
 
+        butonOpen.setText("Open");
+        butonOpen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butonOpenActionPerformed(evt);
+            }
+        });
+
+        butonSave.setText("Save");
+        butonSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butonSaveActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -225,14 +252,6 @@ public class PanelBecEconomic extends javax.swing.JPanel {
                         .addComponent(textfieldFiltruArgon)
                         .addGap(35, 35, 35)
                         .addComponent(labelFilterArgon))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(comboboxFiltruMod, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textfieldFiltruDurataIncalzire))
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelFilterDurataIncalzire)
-                            .addComponent(labelFilterMod)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -241,8 +260,20 @@ public class PanelBecEconomic extends javax.swing.JPanel {
                                 .addComponent(butonSterge))
                             .addComponent(checkboxReglabil, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelFiltru)
-                            .addComponent(butonFiltreaza))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(butonFiltreaza)
+                            .addComponent(butonOpen))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(butonSave))
+                            .addComponent(comboboxFiltruMod, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textfieldFiltruDurataIncalzire))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelFilterDurataIncalzire)
+                            .addComponent(labelFilterMod))))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
@@ -309,7 +340,11 @@ public class PanelBecEconomic extends javax.swing.JPanel {
                             .addComponent(comboboxFiltruMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelFilterMod))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(butonFiltreaza))
+                        .addComponent(butonFiltreaza)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(butonOpen)
+                            .addComponent(butonSave)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(164, Short.MAX_VALUE))
         );
@@ -378,10 +413,77 @@ public class PanelBecEconomic extends javax.swing.JPanel {
         updateTabelFromLista();
     }//GEN-LAST:event_butonFiltreazaActionPerformed
 
+    private void butonOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonOpenActionPerformed
+        // TODO add your handling code here:
+        chooser.showOpenDialog(this);
+        
+        try {
+            FileReader file = new FileReader(chooser.getSelectedFile().getPath());
+            BufferedReader reader = new BufferedReader(file);
+            reader.readLine(); // Citiim prima linie, este header-ul.
+            
+            // Daca am ajuns aici, fisierul poate fii citit. Putem sa dam clear
+            // la lista de becuri.
+            listaBecuri.clear();
+            
+            String currentLine = reader.readLine();
+            while(currentLine != null) {
+                String[] parametrii = currentLine.split(",");
+                
+                BecEconomic c = new BecEconomic();
+                c.continutMercur = Double.parseDouble(parametrii[0]);
+                c.continutArgon = Double.parseDouble(parametrii[1]);
+                c.durataIncalzire = Double.parseDouble(parametrii[2]);
+                c.tipBalast = parametrii[3];
+                c.reglabil = Boolean.parseBoolean(parametrii[4]);
+                c.temperaturaCuloare = Integer.parseInt(parametrii[5]);
+                c.luminozitate = Integer.parseInt(parametrii[6]);
+                c.consum = (short)Integer.parseInt(parametrii[7]);
+                c.indiceRedareCuloare = (float)Float.parseFloat(parametrii[8]);
+                
+                listaBecuri.add(c);
+                
+                currentLine = reader.readLine();
+            }
+        } catch (IOException ex) {
+            System.out.println("Exception occured: " + ex.toString());
+        }
+        
+        updateTabelFromLista();
+    }//GEN-LAST:event_butonOpenActionPerformed
+
+    private void butonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonSaveActionPerformed
+        // TODO add your handling code here:
+        chooser.showSaveDialog(this);
+        
+        try {
+            FileWriter file = new FileWriter(chooser.getSelectedFile().getPath());
+            file.write("Continut mercur,Continut argon,Durata incalzire,Tip balast,Reglabil,Luminozitate,Temperatura culoare,Consum,Indice redare culoare\n");
+            for(BecEconomic c : this.listaBecuri) {
+                file.write("%f,%f,%f,%s,%b,%d,%d,%d,%f\n".formatted(
+                        c.continutMercur,
+                        c.continutArgon,
+                        c.durataIncalzire,
+                        c.tipBalast,
+                        c.reglabil,
+                        c.luminozitate,
+                        c.temperaturaCuloare,
+                        c.consum,
+                        c.indiceRedareCuloare
+                ));
+            }
+            file.close();
+        } catch (IOException ex) {
+            System.out.println("Exception occured: " + ex.toString());
+        }
+    }//GEN-LAST:event_butonSaveActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butonAdaugare;
     private javax.swing.JButton butonFiltreaza;
+    private javax.swing.JButton butonOpen;
+    private javax.swing.JButton butonSave;
     private javax.swing.JButton butonSterge;
     private javax.swing.JCheckBox checkboxReglabil;
     private javax.swing.JComboBox<String> comboboxFiltruMod;

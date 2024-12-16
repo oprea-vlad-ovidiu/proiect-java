@@ -4,7 +4,16 @@
  */
 package ro.cti.ugal.proiect.java.vlad;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import ro.cti.ugal.proiect.java.GUIPrincipal;
 import ro.cti.ugal.proiect.java.SursaIluminat;
@@ -20,6 +29,10 @@ public class PanelBecClasic extends javax.swing.JPanel {
         new Material("Tungsten", 5.6e-8, 0.0045),
         new Material("Grafit", 7.837e-6, -0.0005)
     };
+    
+    private static FileFilter filter = new FileNameExtensionFilter("Comma-separated values(.csv)", "csv");
+    private static JFileChooser chooser = new JFileChooser();
+
     
     private static Material getMaterialForName(String nume) {
         for(Material m : materiale)
@@ -49,6 +62,8 @@ public class PanelBecClasic extends javax.swing.JPanel {
      */
     public PanelBecClasic() {
         initComponents();
+        
+        chooser.setFileFilter(filter);
         
         VladTest.main(new String[]{});
         
@@ -86,6 +101,8 @@ public class PanelBecClasic extends javax.swing.JPanel {
         comboBoxFiltruConditie = new javax.swing.JComboBox<>();
         textfieldFiltruTermen2 = new javax.swing.JTextField();
         butonFiltrare = new javax.swing.JButton();
+        butonOpen = new javax.swing.JButton();
+        butonSave = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(1280, 720));
         setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -158,6 +175,20 @@ public class PanelBecClasic extends javax.swing.JPanel {
             }
         });
 
+        butonOpen.setText("Open");
+        butonOpen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butonOpenActionPerformed(evt);
+            }
+        });
+
+        butonSave.setText("Save");
+        butonSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butonSaveActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -192,7 +223,12 @@ public class PanelBecClasic extends javax.swing.JPanel {
                     .addComponent(comboBoxFiltruTermen1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboBoxFiltruConditie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textfieldFiltruTermen2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(butonFiltrare, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(butonOpen)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(butonSave))
+                        .addComponent(butonFiltrare, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1019, Short.MAX_VALUE)
                 .addContainerGap())
@@ -239,7 +275,11 @@ public class PanelBecClasic extends javax.swing.JPanel {
                         .addComponent(textfieldFiltruTermen2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(butonFiltrare)
-                        .addGap(355, 355, 355))))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(butonOpen)
+                            .addComponent(butonSave))
+                        .addGap(314, 314, 314))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -301,10 +341,74 @@ public class PanelBecClasic extends javax.swing.JPanel {
         updateTabelFromLista();
     }//GEN-LAST:event_butonFiltrareActionPerformed
 
+    private void butonOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonOpenActionPerformed
+        // TODO add your handling code here:
+        chooser.showOpenDialog(this);
+        
+        try {
+            FileReader file = new FileReader(chooser.getSelectedFile().getPath());
+            BufferedReader reader = new BufferedReader(file);
+            reader.readLine(); // Citiim prima linie, este header-ul.
+            
+            // Daca am ajuns aici, fisierul poate fii citit. Putem sa dam clear
+            // la lista de becuri.
+            listaBecuri.clear();
+            
+            String currentLine = reader.readLine();
+            while(currentLine != null) {
+                String[] parametrii = currentLine.split(",");
+                
+                Material material = getMaterialForName(parametrii[0]);
+                BecClasic c = new BecClasic();
+                c.materialFilament = material;
+                c.lungimeFilament = Double.parseDouble(parametrii[1]);
+                c.diametruFilament = Double.parseDouble(parametrii[2]);
+                c.luminozitate = Integer.parseInt(parametrii[3]);
+                c.temperaturaCuloare = Integer.parseInt(parametrii[4]);
+                c.consum = (short)Integer.parseInt(parametrii[5]);
+                c.indiceRedareCuloare = (float)Float.parseFloat(parametrii[6]);
+                
+                listaBecuri.add(c);
+                
+                currentLine = reader.readLine();
+            }
+        } catch (IOException ex) {
+            System.out.println("Exception occured: " + ex.toString());
+        }
+        
+        updateTabelFromLista();
+    }//GEN-LAST:event_butonOpenActionPerformed
+
+    private void butonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonSaveActionPerformed
+        // TODO add your handling code here:
+        chooser.showSaveDialog(this);
+        
+        try {
+            FileWriter file = new FileWriter(chooser.getSelectedFile().getPath());
+            file.write("Material,Lungime filament,Diametru filament,Luminozitate,Temperatura culoare,Consum,Indice redare culoare\n");
+            for(BecClasic c : this.listaBecuri) {
+                file.write("%s,%f,%f,%d,%d,%d,%f\n".formatted(
+                        c.materialFilament.nume,
+                        c.lungimeFilament,
+                        c.diametruFilament,
+                        c.luminozitate,
+                        c.temperaturaCuloare,
+                        c.consum,
+                        c.indiceRedareCuloare
+                ));
+            }
+            file.close();
+        } catch (IOException ex) {
+            System.out.println("Exception occured: " + ex.toString());
+        }
+    }//GEN-LAST:event_butonSaveActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butonAdaugare;
     private javax.swing.JButton butonFiltrare;
+    private javax.swing.JButton butonOpen;
+    private javax.swing.JButton butonSave;
     private javax.swing.JButton butonStergere;
     private javax.swing.JComboBox<String> comboBoxFiltruConditie;
     private javax.swing.JComboBox<String> comboBoxFiltruTermen1;

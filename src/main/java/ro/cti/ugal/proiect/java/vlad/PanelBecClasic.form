@@ -61,7 +61,14 @@
                   <Component id="comboBoxFiltruTermen1" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
                   <Component id="comboBoxFiltruConditie" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="textfieldFiltruTermen2" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
-                  <Component id="butonFiltrare" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="butonOpen" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="butonSave" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="butonFiltrare" alignment="0" min="-2" pref="169" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane1" pref="1019" max="32767" attributes="0"/>
@@ -118,7 +125,12 @@
                       <Component id="textfieldFiltruTermen2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="butonFiltrare" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="355" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="butonOpen" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="butonSave" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="314" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -300,6 +312,22 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butonFiltrareActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="butonOpen">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Open"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butonOpenActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="butonSave">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Save"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butonSaveActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

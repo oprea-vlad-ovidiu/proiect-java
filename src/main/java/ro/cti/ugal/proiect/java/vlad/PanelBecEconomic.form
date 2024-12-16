@@ -78,17 +78,6 @@
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="labelFilterArgon" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="comboboxFiltruMod" alignment="0" max="32767" attributes="0"/>
-                          <Component id="textfieldFiltruDurataIncalzire" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="labelFilterDurataIncalzire" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelFilterMod" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -99,8 +88,24 @@
                           <Component id="checkboxReglabil" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
                           <Component id="labelFiltru" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="butonFiltreaza" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="butonOpen" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="butonSave" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="comboboxFiltruMod" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textfieldFiltruDurataIncalzire" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="labelFilterDurataIncalzire" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelFilterMod" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -185,6 +190,11 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="butonFiltreaza" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="butonOpen" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="butonSave" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <Component id="jScrollPane1" alignment="0" min="-2" pref="550" max="-2" attributes="0"/>
               </Group>
@@ -433,6 +443,22 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butonFiltreazaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="butonOpen">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Open"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butonOpenActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="butonSave">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Save"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butonSaveActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
